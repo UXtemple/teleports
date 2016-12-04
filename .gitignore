@@ -1,0 +1,8 @@
+**/*.map*
+*.log
+.DS_Store
+node_modules
+dist
+!public/index.html
+public/*
+*.tmp

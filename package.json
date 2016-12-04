@@ -1,0 +1,41 @@
+{
+  "name": "teleports",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UXtemple/teleports.git"
+  },
+  "keywords": [
+    "teleports",
+    "panels",
+    "runtime",
+    "react",
+    "UXtemple"
+  ],
+  "author": "UXtemple <hi@uxtemple.com>",
+  "contributors": [
+    "Darío Javier Cravero <dario@uxtemple.com>",
+    "Tom Parandyk <tom@uxtemple.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/UXtemple/teleports/issues"
+  },
+  "homepage": "https://github.com/UXtemple/teleports#readme",
+  "dependencies": {
+    "preact": "^7.1.0",
+    "preact-compat": "^3.9.3",
+    "react": "^15.4.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-plugin-transform-class-properties": "^6.19.0",
+    "babel-plugin-transform-export-extensions": "^6.8.0",
+    "babel-plugin-transform-object-rest-spread": "^6.19.0",
+    "babel-preset-babili": "^0.0.9",
+    "babel-preset-react": "^6.16.0",
+    "react-dom": "^15.4.1",
+    "webpack": "2.1.0-beta.27",
+    "webpack-dev-server": "2.1.0-beta.12"
+  }
+}
