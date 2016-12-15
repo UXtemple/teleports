@@ -1,0 +1,21 @@
+---
+- block: List
+  from: {props.genres}
+  of:
+  - block: Vertical
+    teleportTo: {item.path}
+    style:
+      marginTop: 10
+    blocks:
+    - block: Text
+      text: {item.title}
+
+---
+main:
+  genres:
+  - title: Action
+    path: action
+  
+  - title: Comedy
+    path: comedy
+    

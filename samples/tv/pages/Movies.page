@@ -1,0 +1,21 @@
+---
+- block: List
+  from: {props.movies}
+  of:
+  - block: Vertical
+    teleportTo: {item.path}
+    style:
+      marginTop: 10
+    blocks:
+    - block: Text
+      text: {item.title}
+
+---
+main:
+  movies:
+  - title: 48 hours
+    path: 48-hours
+  
+  - title: 49 hours
+    path: 49-hours
+    

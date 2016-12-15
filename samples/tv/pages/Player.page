@@ -1,0 +1,13 @@
+---
+- block: Vertical
+  style:
+    backgroundColor: #e01d1d
+    height: 100%
+    overflowY: auto
+    width: 360
+  blocks:
+  - block: Text
+    text: PLAY
+
+---
+main:

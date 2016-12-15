@@ -1,0 +1,67 @@
+---
+- block: Vertical
+  style:
+    backgroundColor: #FFFFFF
+    border: 1px solid pink
+    height: {props.height}
+    overflowY: auto
+    width: {props.width}
+  blocks:
+  - block: Horizontal
+    style:
+      position:
+        {props.views.length > 2 ? 'absolute' : 'relative'}
+      zIndex: 1
+      transform:
+        {props.views.length > 2 ? 'scale(0.25)' : 'scale(1)'}
+      transformOrigin: top left
+    
+    blocks:
+    # genres  
+    - block: Horizontal
+      style:
+        backgroundColor: blue
+        height: {props.height}
+        width: 360
+      blocks: {props.views[0].component}
+      when: {props.views[0]}
+    
+    # movies
+    - block: Horizontal
+      style:
+        backgroundColor: red
+        height: {props.height}
+        width: 360
+      blocks: {props.views[1].component}
+      when: {props.views[1]}
+      
+  # player
+  - block: Horizontal
+    style:
+      backgroundColor: yellow
+      height: {props.height}
+      width: {props.width}
+    blocks: {props.views[2].component}
+    when: {props.views[2]}
+
+---
+genres:
+  views:
+  - component: render(Genres)
+  height: 600
+  width: 360
+
+genresMovies:
+  views:
+  - component: render(Genres)
+  - component: render(Movies)
+  height: 600
+  width: 720
+  
+genresMoviesPlayer:
+  views:
+  - component: render(Genres)
+  - component: render(Movies)
+  - component: render(Player)
+  height: 600
+  width: 768
