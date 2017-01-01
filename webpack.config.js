@@ -41,7 +41,6 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'panels/blocks': `${__dirname}/blocks.js`,
       // react: 'preact-compat',
       // 'react-dom': 'preact-compat',
       'react-native': './react-native-web.js'

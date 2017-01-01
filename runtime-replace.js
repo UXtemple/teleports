@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './runtime-replace-style.js'
+// import style from './runtime-replace-style.js'
 
 const RuntimeReplace = ({ height, views, width }) => {
   const view = views[views.length - 1]
@@ -13,9 +13,7 @@ const RuntimeReplace = ({ height, views, width }) => {
       height={height}
       key={key}
       width={width}
-    >
-      {style}
-    </Component>
+    />
   )
 }
 export default RuntimeReplace

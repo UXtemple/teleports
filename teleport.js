@@ -1,8 +1,8 @@
 import React, { Children, Component, PropTypes } from 'react'
 
 export default class Teleport extends Component {
-  onClick = async (e) => {
-    const { goTo, href, onError } = this.props
+  onClick = e => {
+    const { goTo, href } = this.props
 
     if (
       goTo ||
@@ -15,14 +15,7 @@ export default class Teleport extends Component {
 
     e.preventDefault()
 
-    // straight up redirect
-    try {
-      await this.context.navigate(href)
-    } catch(error) {
-      if (typeof onError === 'function') {
-        onError(error)
-      }
-    }
+    return this.context.navigate(href)
   }
 
   render() {
@@ -48,8 +41,7 @@ export default class Teleport extends Component {
 Teleport.propTypes = {
   href: PropTypes.string,
   goTo: PropTypes.bool,
-  onError: PropTypes.func
 }
 Teleport.contextTypes = {
-  navigate: PropTypes.func.isRequired
+  navigate: PropTypes.func.isRequired,
 }

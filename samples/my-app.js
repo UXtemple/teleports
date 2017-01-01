@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MYThing = props => (
+const MyThing = props => (
   <button>{props.thing}</button>
 )
 const MyApp = props => (
@@ -8,7 +8,7 @@ const MyApp = props => (
     This is my app!!!!!
     {props.text}
 
-    <MYThing thing='eqw' />
+    <MyThing thing='eqw' />
   </div>
 )
 

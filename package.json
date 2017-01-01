@@ -20,6 +20,9 @@
   "bugs": {
     "url": "https://github.com/UXtemple/teleports/issues"
   },
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
   "homepage": "https://github.com/UXtemple/teleports#readme",
   "dependencies": {
     "preact": "^7.1.0",
