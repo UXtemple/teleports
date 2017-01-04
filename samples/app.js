@@ -4,7 +4,7 @@ import React from 'react'
 import render from '../render.js'
 import Teleport from '../teleport.js'
 
-const Home = ({ border, children, height, width }) => (
+const Home = ({ border, children, context, height, width }) => (
   <div style={{ border, flexDirection: 'column', height, width }}>
     <div>
       height: {height}
@@ -12,13 +12,13 @@ const Home = ({ border, children, height, width }) => (
       hey!
     </div>
 
-    <Teleport href='content'>
+    <Teleport context={context} href='content'>
       <div>
         go there
       </div>
     </Teleport>
 
-    <Teleport href='/https://another.app.com/'>
+    <Teleport context={context} href='/https://another.app.com/'>
       Another app!
     </Teleport>
 

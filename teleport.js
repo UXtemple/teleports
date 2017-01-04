@@ -1,21 +1,16 @@
-import React, { Children, Component, PropTypes } from 'react'
+import React, { Component, PropTypes } from 'react'
 
 export default class Teleport extends Component {
   onClick = e => {
-    const { goTo, href } = this.props
+    const { context, props } = this
 
-    if (
-      goTo ||
-        (e.target.nodeName === 'A' &&
-        (e.metaKey || e.ctrlKey || e.shiftKey || e.nativeEvent.which === 2))
-    ) {
-      // ignore click for new tab / new window behavior
-      return
-    }
+    // ignore click for new tab / new window behavior
+    if (props.goTo || e.metaKey || e.ctrlKey || e.shiftKey || e.nativeEvent.which === 2) return
 
     e.preventDefault()
 
-    return this.context.navigate(href)
+    const href = props.raw ? props.href : `${props.context || context.context}${props.href}`
+    return context.navigate(href, true)
   }
 
   render() {
@@ -38,10 +33,13 @@ export default class Teleport extends Component {
     )
   }
 }
+Teleport.contextTypes = {
+  context: PropTypes.string,
+  navigate: PropTypes.func.isRequired,
+}
 Teleport.propTypes = {
+  context: PropTypes.string,
   href: PropTypes.string,
   goTo: PropTypes.bool,
-}
-Teleport.contextTypes = {
-  navigate: PropTypes.func.isRequired,
+  raw: PropTypes.bool,
 }

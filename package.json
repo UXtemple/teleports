@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/UXtemple/teleports#readme",
   "dependencies": {
+    "little-loader": "^0.2.0",
     "preact": "^7.1.0",
     "preact-compat": "^3.9.3",
     "react": "^15.4.1",
