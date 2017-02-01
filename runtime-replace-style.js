@@ -29,6 +29,10 @@ export default canUseDOM ? (
       padding: 0;
       outline: 0;
     }
+    button {
+      background-color: transparent;
+      border: 0;
+    }
     button::-moz-focus-inner {
       border: 0;
       margin: 0;

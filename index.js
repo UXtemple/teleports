@@ -60,7 +60,7 @@ export default class Teleports extends Component {
     const schema = uri.match(SCHEMA)[1]
 
     // gather their views
-    getViews({ mounted, schema }).then(({ Runtime, views }) => {
+    getViews({ mounted, schema, uri }).then(({ Runtime, views }) => {
       this.setState({
         uri,
         Runtime,

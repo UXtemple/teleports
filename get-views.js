@@ -1,6 +1,6 @@
 import load from './import.js'
 
-export default ({ mounted, schema }) => (
+export default ({ mounted, schema, uri }) => (
   Promise.all(
     mounted.map(({ app, path }, mountedAt) => (
       load(app)
@@ -28,7 +28,8 @@ export default ({ mounted, schema }) => (
       return data.views.map(view => ({
         ...view, // TODO run through edge cases to see if it's alright to mutate v instead
         context: `${base}${view.path}`,
-        key: `${data.app}-${data.mountedAt}-${view.path}`
+        key: `${data.app}-${data.mountedAt}-${view.path}`,
+        uri,
       }))
     }).reduce((a, b) => a.concat(b), [])
 
